@@ -1,4 +1,4 @@
-name: Deploy React + church + kanarapalli
+name: Deploy React + keneva group + constructions
 
 on:
   workflow_dispatch:
