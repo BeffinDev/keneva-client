@@ -1,0 +1,642 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme tokens (colors, fonts) */
+@theme {
+  --color-default: #364d59;
+  --color-primary: #feb900;
+  --color-secondary: #52565e;
+
+  --font-sans: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-primary: "Roboto", sans-serif;
+  --font-secondary: "Work Sans", sans-serif;
+}
+
+/* Global/base styles (plain CSS works fine in v4) */
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-default);
+  overflow-x: hidden;
+}
+
+a {
+  /* color: var(--color-primary); */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffc732;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+}
+
+/* Sections */
+section {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f5f6f7;
+}
+
+/* Section header with twin bars */
+.section-header {
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  color: #2e3135;
+}
+
+.section-header h2::before,
+.section-header h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+.section-header h2::before {
+  margin: 0 15px 10px 0;
+}
+
+.section-header h2::after {
+  margin: 0 0 10px 15px;
+}
+
+.section-header p {
+  margin: 0;
+}
+
+@media (min-width: 1199px) {
+  .section-header p {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Swiper testimonialData */
+.swiper-pagination-bullet {
+  background: #e5e7eb;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #facc15;
+}
+
+
+/* Breadcrumbs (structure; set bg image inline) */
+.breadcrumbs {
+  padding: 140px 0 60px 0;
+  min-height: 30vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.breadcrumbs::before {
+  content: "";
+  background-color: rgba(0, 0, 0, .6);
+  position: absolute;
+  inset: 0;
+}
+
+.breadcrumbs h2 {
+  font-size: 56px;
+  font-weight: 500;
+  color: #fff;
+  font-family: var(--font-secondary);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.breadcrumbs ol a {
+  color: rgba(255, 255, 255, .8);
+  transition: .3s;
+}
+
+.breadcrumbs ol a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #fff;
+  content: "/";
+}
+
+/* Constructions cards */
+.constructions-card {
+  border: 1px solid rgba(82, 86, 94, .2);
+  background: #fff;
+  position: relative;
+  border-radius: 0;
+}
+
+.constructions-card .card-bg {
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.constructions-card .card-body {
+  padding: 30px;
+}
+
+.constructions-card h4 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--color-secondary);
+}
+
+.constructions-card p {
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+/* Services items */
+.service-item {
+  padding: 40px;
+  background: #fff;
+  height: 100%;
+}
+
+.service-item .icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.service-item .icon i {
+  color: var(--color-secondary);
+  font-size: 40px;
+  transition: .3s;
+  z-index: 2;
+  position: relative;
+  line-height: 1.8;
+}
+
+.service-item .icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #f0f1f2;
+  border-radius: 50px;
+  z-index: 1;
+  top: 10px;
+  right: -15px;
+  transition: .3s;
+}
+
+.service-item h3 {
+  color: var(--color-default);
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  padding-bottom: 8px;
+  font-size: 22px;
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid #ebebed;
+  transition: .3s;
+}
+
+.service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.service-item .readmore {
+  margin-top: 15px;
+  display: inline-block;
+  color: var(--color-primary);
+}
+
+.service-item:hover .icon::before {
+  background: var(--color-primary);
+}
+
+.service-item:hover h3 {
+  border-color: var(--color-primary);
+}
+
+/* Testimonials bullets (for Swiper) */
+.testimonials-bullets .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #d5d7da;
+  opacity: 1;
+}
+
+.testimonials-bullets .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
+}
+
+/* Footer background helper (optional) */
+.footer-bg {
+  background: url("/assets/img/footer-bg.jpg") top center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.footer-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .8);
+}
+
+/* Example custom utilities (Tailwind v4) */
+@utility section {
+  @apply py-20 overflow-hidden;
+}
+
+@utility section-bg {
+  @apply bg-[#f5f6f7];
+}
+
+
+/* --------------------------- */
+/* Custom Styles */
+/* --------------------------- */
+
+/* Bootstrap-like helpers implemented with Tailwind v4 */
+
+/* Container */
+@utility container {
+  @apply w-full mx-auto px-4;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px
+  }
+}
+
+/* Buttons */
+@utility btn {
+  @apply inline-flex items-center justify-center font-normal leading-snug cursor-pointer px-3 py-1.5 rounded border border-transparent transition-colors duration-150;
+}
+
+/* @utility btn-primary {
+  @apply btn text-[color:rgb(33, 37, 41)] bg-primary border-primary;
+} */
+
+.btn-primary:hover {
+  background-color: #ffc019;
+}
+
+/* @utility btn-secondary {
+  @apply btn text-white bg-[var(--color-secondary)] border-[var(--color-secondary)];
+}
+
+@utility btn-outline-primary {
+  @apply btn text-[var(--color-primary)] bg-transparent border-[var(--color-primary)];
+} */
+
+.btn-outline-primary:hover {
+  color: #212529;
+  background-color: var(--color-primary);
+}
+
+/* Badges */
+@utility badge {
+  @apply inline-block text-xs font-semibold px-2 py-0.5 rounded;
+}
+
+@utility badge-primary {
+  @apply badge text-white bg-[var(--color-primary)];
+}
+
+/* Alerts */
+@utility alert {
+  @apply w-full px-4 py-3 rounded border;
+}
+
+  /* @utility alert-primary {
+    @apply alert bg-[color:rgb(207, 226, 255)] border-[color:rgb(186, 203, 230)] text-black;
+  } */
+
+/* @utility alert-secondary {
+  @apply alert bg-[color:rgb(226, 227, 229)] border-[color:rgb(203, 204, 206)] text-black;
+} */
+
+/* Forms */
+/* @utility form-control {
+  @apply block w-full text-[16px] leading-[1.5] text-[rgb(33, 37, 41)] bg-white bg-clip-padding border border-[rgb(206, 212, 218)] rounded-md px-3 py-2 outline-none transition-[border, box-shadow] duration-150;
+} */
+
+.form-control:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+}
+
+/* @utility form-select {
+  @apply block w-full rounded-md border border-[rgb(206, 212, 218)] bg-white px-3 py-2;
+} */
+
+/* Tables (simple) */
+@utility table {
+  @apply w-full text-[color:var(--color-default)] align-top border-collapse;
+}
+
+.table th,
+.table td {
+  @apply border border-[color:#dee2e6] px-2 py-2;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Misc spacing helpers (use Tailwind directly when possible) */
+@utility lead {
+  @apply text-xl font-light;
+}
+
+/* Swiper refinements */
+.swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.swiper .swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background: var(--color-primary);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  margin-top: -21px;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+}
+
+section.relative .swiper .swiper-pagination-bullets {
+  bottom: 20px;
+}
+
+/* Hero carousel specific styling */
+.hero .swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero .swiper .swiper-pagination-bullet-active {
+  background: var(--color-primary);
+}
+
+/* Section header styling */
+.section-header {
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  color: #2e3135;
+  padding-bottom: 30px;
+  margin-bottom: 0;
+}
+
+.section-header h2::before,
+.section-header h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--color-primary);
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+}
+
+.section-header h2::before {
+  margin: 0 15px 10px 0;
+  left: 50%;
+  transform: translateX(-100%);
+}
+
+.section-header h2::after {
+  margin: 0 0 10px 15px;
+  right: 50%;
+  transform: translateX(100%);
+}
+
+.section-header p {
+  margin: 0 auto 0 auto;
+  color: #6c757d;
+}
+
+@media (min-width: 1199px) {
+  .section-header p {
+    max-width: 60%;
+  }
+}
+
+/* Service card styling */
+.service-card {
+  padding: 40px 30px;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+  transition: all 0.3s ease;
+  height: 100%;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.07);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .icon {
+  font-size: 48px;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .icon {
+  color: #ffc732;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--color-default);
+}
+
+.service-card p {
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Construction card styling */
+.construction-card {
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.07);
+}
+
+.construction-card:hover {
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Project filter styling */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 2px solid var(--color-primary);
+  background: transparent;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-default);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* Testimonial styling */
+.testimonial-card {
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.07);
+}
+
+.testimonial-card:hover {
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.testimonial-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--color-default);
+}
+
+.testimonial-card .role {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #6c757d;
+  line-height: 1.6;
+}

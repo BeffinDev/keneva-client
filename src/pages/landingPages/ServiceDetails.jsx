@@ -1,0 +1,1 @@
+export default function ServiceDetails(){ return <div className="max-w-7xl mx-auto px-4 py-12">Service Details</div>; }
