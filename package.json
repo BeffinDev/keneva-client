@@ -1,7 +1,7 @@
 {
   "name": "keneva",
   "private": true,
-  "homepage": "https://beffindev.github.io/Keneva-client/",
+  "homepage": "https://beffindev.github.io/keneva-client/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
