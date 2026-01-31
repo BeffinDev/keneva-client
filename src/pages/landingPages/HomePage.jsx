@@ -1122,7 +1122,7 @@ export default function HomePage() {
                 </div>
             </section> */}
 
-            <section className="bg-white">
+            {/* <section className="bg-white">
                 <div className="max-w-7xl mx-auto px-4 py-20">
                     <div className="grid gap-8 md:grid-cols-3 px-10">
                         {[
@@ -1146,17 +1146,14 @@ export default function HomePage() {
                                 key={i}
                                 className="group bg-white border border-gray-100 p-8 text-center shadow-sm hover:shadow-lg transition"
                             >
-                                {/* Icon */}
                                 <div className="flex items-center justify-center w-14 h-14 mx-auto mb-5 rounded-full bg-yellow-50 text-yellow-500 text-2xl">
                                     {s.icon}
                                 </div>
 
-                                {/* Counter */}
                                 <div className="text-4xl md:text-5xl font-bold text-gray-900">
                                     <CountUp end={s.n} duration={1.6} />+
                                 </div>
 
-                                {/* Label */}
                                 <p className="mt-2 text-gray-600 font-medium tracking-wide">
                                     {s.l}
                                 </p>
@@ -1164,7 +1161,7 @@ export default function HomePage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 }

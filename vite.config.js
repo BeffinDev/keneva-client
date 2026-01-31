@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/keneva-client/'
+  // base: '/keneva-client/'
 })
